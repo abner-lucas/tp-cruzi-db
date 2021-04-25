@@ -1,0 +1,32 @@
+{%extends 'base.html'%}
+
+{%block 'titulo'%}Download{%endblock%}
+
+{%block 'conteudo'%}
+    <style>
+      h4 {
+      color: #3587a6;
+      }
+    </style>
+<h4 class="text-center ">Baixar a sequência do organismo Trypanosoma cruzi</h4>
+<div class="container">
+      <div class="row">
+        <div class="d-flex justify-content-center">
+          <div class="border border-dark rounded-3 py-3 px-3 col-md-8">
+              <h7>Selecione a sequencia em formato FASTA que deseja baixar:</h7>
+              <form action="{% url 'page_objects'%}" method="get">
+                  {% csrf_token %}
+                  <select class="form-select" aria-label="Default select example" name="selectType">
+                      <option selected value="1">Genoma</option>
+                      <option value="2">Transcrição</option>
+                      <option value="3">Proteína</option>
+                  </select>
+                  <div class="d-flex justify-content-center d-inline p-3">
+                    <button class="btn btn-success" type="submit" value="Select">DOWNLOAD</button>
+                  </div>
+              </form>
+          </div>
+        </div>
+      </div>
+    </div>
+{%endblock%}
