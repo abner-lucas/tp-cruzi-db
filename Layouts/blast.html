@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <!-- meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+
+    <title>Blast</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Trypanosoma Cruzi Database</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#">Sobre</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contato</a>
+            </li>
+          </ul>
+          <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Ir</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <div class="mb-2 text-dark" style="background-color: #5CADCB;">
+      <ul class="d-flex justify-content-center">
+        <div class="d-inline p-3  text-white">
+          HOME
+        </div>
+        <div class="d-inline p-3  text-white">
+          BLAST
+        </div>
+        <div class="d-inline p-3 text-white">
+          FILOGENIA
+        </div>
+        <div class="d-inline p-3 text-white">
+          DOWNLOAD
+        </div>
+      </ul>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="d-flex justify-content-center">
+          <div>
+            <h4 style="color: #5CADCB;">Pesquisa Blast</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="d-flex justify-content-center">
+          <div class="border border-dark rounded-3 col-md-8 py-3 px-3">
+            <div>
+
+              <div class="mb-3">
+                <label for="progBlast">Selecione o programa do Blast: </label>
+                <select class="form-select" id="progBlast">
+                  <option>blastn </option>
+                  <option>tblastn </option>
+                  <option>tblastx </option>
+                  <option>blastp </option>
+                  <option>blastx </option>
+                </select>
+              </div>
+
+              <div class="mb-3">
+                <label for="dbBlast">Selecione o banco de dados para o Blast: </label>
+                <select class="form-select" id="dbBlast">
+                  <option>1 </option>
+                  <option>2 </option>
+                  <option>3 </option>
+                  <option>4 </option>
+                  <option>5 </option>
+                </select>
+              </div>
+
+              <div class="mb-3">
+                <label for="seqtxtBlast" class="form-label">Informe suas sequências em formato FASTA: </label>
+                <textarea class="form-control" id="seqtxtBlast" rows="3"></textarea>
+              </div>
+
+              <div class="mb-3">
+                <label for="seqfileBlast" class="form-label">Upload do arquivo com as sequências em formato FASTA: </label>
+                <input class="form-control" type="file" id="seqfileBlast">
+              </div>
+
+              <div>
+                <label class="form-label">Outras opções: </label>
+                <div class="input-group mb-3">
+                  <span class="input-group-text">Esperado</span>
+                  <input type="text" class="form-control" placeholder="1e-2" aria-label="esperadoBlast">
+                  <span class="input-group-text">Descrição</span>
+                  <input type="text" class="form-control" placeholder="5" aria-label="descricaoBlast">
+                  <span class="input-group-text">Alinhamento</span>
+                  <input type="text" class="form-control" placeholder="5" aria-label="alinhamentoBlast">
+                </div>
+
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="filtroBlast">
+                  <label class="form-check-label" for="filtroBlast">
+                  Filtrar
+                  </label>
+                </div>
+              </div>
+
+              <div class="d-flex justify-content-center mt-3 mb-3">
+                <button type="button" class="btn btn-success">BLAST</button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Bootstrap com Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+
+  </body>
+</html>
