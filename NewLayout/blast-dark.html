@@ -11,7 +11,7 @@
     <link href="assets/css/styles.css" rel="stylesheet" />
 
 
-    <title>Blast</title>
+    <title>{%block 'titulo'%}{%endblock%}</title>
   </head>
   <body>
     <div class="w-100">
@@ -62,56 +62,7 @@
       </nav>
 
 
-
-    <div class="container d-flex flex-column h-100 align-items-center my-4">
-
-      <div class="row col-8">
-        <div class="d-flex col-12 ">
-          <div class="border border-dark rounded-3 col-12 py-3 px-3">
-            <div>
-              <h3 class="mb-3 card-title">Pesquisa Blast</h3>   
-              <div class="mb-3">
-                <label for="progBlast">Selecione o programa do Blast: </label>
-                <select class="form-select" id="progBlast">
-                  <option>blastn </option>
-                  <option>tblastn </option>
-                  <option>tblastx </option>
-                  <option>blastp </option>
-                  <option>blastx </option>
-                </select>
-              </div>
-
-              <div class="mb-3">
-                <label for="dbBlast">Selecione o banco de dados para o Blast: </label>
-                <select class="form-select" id="dbBlast">
-                  <option>1 </option>
-                  <option>2 </option>
-                  <option>3 </option>
-                  <option>4 </option>
-                  <option>5 </option>
-                </select>
-              </div>
-
-              <div class="mb-3">
-                <label for="seqtxtBlast" class="form-label">Informe suas sequências em formato FASTA: </label>
-                <textarea class="w-100" id="seqtxtBlast" rows="3"></textarea>
-              </div>
-
-              <div class="mb-3">
-                <label for="seqfileBlast" class="form-label">Upload do arquivo com as sequências em formato FASTA: </label><br />
-                <input type="file" id="seqfileBlast">
-              </div>
-
-              <div class="d-flex justify-content-center mt-3 mb-2">
-                <button type="button" class="btn btn-outline-primary col-12">BLAST</button>
-              </div>
-
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
+		{%block 'conteudo'%}{%endblock%}
 
     <!-- Bootstrap com Popper -->
     <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script> -->
