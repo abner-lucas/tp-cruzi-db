@@ -1,0 +1,31 @@
+{%extends 'base.html'%}
+
+{%block 'titulo'%}Resposta Blast{%endblock%}
+
+{%block 'conteudo'%}
+
+<hr>
+</hr>
+{{object}}
+<hr>
+</hr>
+
+<thead>
+    <th>alinhamento</th>
+</thead>
+
+{%for i in object%}
+
+<table>
+    <tbody>
+        <tr>
+            <td>{{i.gaps}}</td>
+        </tr>
+    </tbody>
+</table>
+
+
+{% endfor %}
+
+
+{%endblock%}

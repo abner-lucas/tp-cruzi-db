@@ -5,80 +5,79 @@
 {%block 'conteudo'%}
 
 <div class="container">
-    <div class="row">
-        <div class="d-flex justify-content-center">
-          <div>
-            <h4 style="color: #5CADCB;">Pesquisa Blast</h4>
-          </div>
-        </div>
+  <div class="row">
+    <div class="d-flex justify-content-center">
+      <div>
+        <h4 style="color: #5CADCB;">Pesquisa Blast</h4>
+      </div>
     </div>
+  </div>
 </div>
 
 <div class="container">
-    <div class="row">
-        <div class="d-flex justify-content-center">
-          <div class="border border-dark rounded-3 col-md-8 py-3 px-3">
-            <div>
-
-              <div class="mb-3">
-                <label for="progBlast">Selecione o programa do Blast: </label>
-                <select class="form-select" id="progBlast">
-                  <option>blastn </option>
-                  <option>tblastn </option>
-                  <option>tblastx </option>
-                  <option>blastp </option>
-                  <option>blastx </option>
-                </select>
-              </div>
-
-              <div class="mb-3">
-                <label for="dbBlast">Selecione o banco de dados para o Blast: </label>
-                <select class="form-select" id="dbBlast">
-                  <option>1 </option>
-                  <option>2 </option>
-                  <option>3 </option>
-                  <option>4 </option>
-                  <option>5 </option>
-                </select>
-              </div>
-
-              <div class="mb-3">
-                <label for="seqtxtBlast" class="form-label">Informe suas sequências em formato FASTA: </label>
-                <textarea class="form-control" id="seqtxtBlast" rows="3"></textarea>
-              </div>
-
-              <div class="mb-3">
-                <label for="seqfileBlast" class="form-label">Upload do arquivo com as sequências em formato FASTA: </label>
-                <input class="form-control" type="file" id="seqfileBlast">
-              </div>
-
-              <div>
-                <label class="form-label">Outras opções: </label>
-                <div class="input-group mb-3">
-                  <span class="input-group-text">Esperado</span>
-                  <input type="text" class="form-control" placeholder="1e-2" aria-label="esperadoBlast">
-                  <span class="input-group-text">Descrição</span>
-                  <input type="text" class="form-control" placeholder="5" aria-label="descricaoBlast">
-                  <span class="input-group-text">Alinhamento</span>
-                  <input type="text" class="form-control" placeholder="5" aria-label="alinhamentoBlast">
-                </div>
-
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="filtroBlast">
-                  <label class="form-check-label" for="filtroBlast">
-                  Filtrar
-                  </label>
-                </div>
-              </div>
-
-              <div class="d-flex justify-content-center mt-3 mb-3">
-                <button type="button" class="btn btn-success">BLAST</button>
-              </div>
-
+  <div class="row">
+    <div class="d-flex justify-content-center">
+      <div class="border border-dark rounded-3 col-md-8 py-3 px-3">
+        <div>
+          <form method="post" action="{% url 'getresponse'%}">
+            {% csrf_token %}
+            <div class="mb-3">
+              <label for="progBlast">Selecione o programa do Blast:</label>
+              <select class="form-select" id="progBlast">
+                <option>blastn </option>
+                <option>tblastn </option>
+                <option>tblastx </option>
+                <option>blastp </option>
+                <option>blastx </option>
+              </select>
             </div>
-          </div>
+            <div class="mb-3">
+              <label for="dbBlast">Selecione o banco de dados para o Blast: </label>
+              <select class="form-select" id="dbBlast">
+                <option>1 </option>
+                <option>2 </option>
+                <option>3 </option>
+                <option>4 </option>
+                <option>5 </option>
+              </select>
+            </div>
+
+            <div class="mb-3">
+              <label for="seqtxtBlast" class="form-label">Informe suas sequências em formato FASTA: </label>
+              <textarea class="form-control" name="seqtxtBlast" rows="3"></textarea>
+            </div>
+
+            <div class="mb-3">
+              <label for="seqfileBlast" class="form-label">Upload do arquivo com as sequências em formato FASTA:
+              </label>
+              <input class="form-control" type="file" name="seqfileBlast">
+            </div>
+            <div>
+              <label class="form-label">Outras opções: </label>
+              <div class="input-group mb-3">
+                <span class="input-group-text">Esperado</span>
+                <input type="text" class="form-control" placeholder="1e-2" aria-label="esperadoBlast">
+                <span class="input-group-text">Descrição</span>
+                <input type="text" class="form-control" placeholder="5" aria-label="descricaoBlast">
+                <span class="input-group-text">Alinhamento</span>
+                <input type="text" class="form-control" placeholder="5" aria-label="alinhamentoBlast">
+              </div>
+
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="filtroBlast">
+                <label class="form-check-label" for="filtroBlast">
+                  Filtrar
+                </label>
+              </div>
+            </div>
+            <div class="d-flex justify-content-center mt-3 mb-3">
+              <button type="submit" class="btn btn-success">BLAST</button>
+            </div>
+          </form>
         </div>
+      </div>
     </div>
+  </div>
 </div>
 
 {%endblock%}
