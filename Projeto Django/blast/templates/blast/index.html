@@ -19,11 +19,11 @@
     <div class="d-flex justify-content-center">
       <div class="border border-dark rounded-3 col-md-8 py-3 px-3">
         <div>
-          <form method="post" action="{% url 'getresponse'%}">
+          <form method="post" action="{% url 'getresponse'%}" enctype="multipart/form-data">
             {% csrf_token %}
             <div class="mb-3">
               <label for="progBlast">Selecione o programa do Blast:</label>
-              <select class="form-select" id="progBlast">
+              <select class="form-select" name="progBlast">
                 <option>blastn </option>
                 <option>tblastn </option>
                 <option>tblastx </option>
@@ -33,7 +33,7 @@
             </div>
             <div class="mb-3">
               <label for="dbBlast">Selecione o banco de dados para o Blast: </label>
-              <select class="form-select" id="dbBlast">
+              <select class="form-select" name="dbBlast">
                 <option>1 </option>
                 <option>2 </option>
                 <option>3 </option>
@@ -50,9 +50,9 @@
             <div class="mb-3">
               <label for="seqfileBlast" class="form-label">Upload do arquivo com as sequências em formato FASTA:
               </label>
-              <input class="form-control" type="file" name="seqfileBlast">
+              <input class="form-control" type="file" name="seqfileBlast" id="seqfileBlast">
             </div>
-            <div>
+            <!-- <div>
               <label class="form-label">Outras opções: </label>
               <div class="input-group mb-3">
                 <span class="input-group-text">Esperado</span>
@@ -69,7 +69,7 @@
                   Filtrar
                 </label>
               </div>
-            </div>
+            </div> -->
             <div class="d-flex justify-content-center mt-3 mb-3">
               <button type="submit" class="btn btn-success">BLAST</button>
             </div>
