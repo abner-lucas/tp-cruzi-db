@@ -1,9 +1,37 @@
 {%extends 'base.html'%}
+{% load static %}
 
 {%block 'titulo'%}Filogenia{%endblock%}
 
 {%block 'conteudo'%}
 
 <h1> Página Filogenia </h1>
+
+<head>
+    <style>
+        .center {
+            position: absolute;
+            left: 50%;
+            top: 43%;
+            transform: translate(-50%, -50%);
+        }
+
+        h1 {
+            text-align: center;
+            color: #3587a6;
+        }
+
+        p {
+            text-align: center;
+        }
+
+        div {
+            text-align: center;
+        }
+    </style>
+</head>
+<div class="center">
+    <img src="{% static 'img/c.png' %}" style="width: 772px; height: auto ">
+</div>
 
 {%endblock%}
