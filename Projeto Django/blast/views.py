@@ -21,6 +21,9 @@ def GetResponse(request):
         fn = 'blast\\out\\' + os.path.basename(arquivo.name)
         open(fn, 'wb').write(arquivo.file.read())
         
+        if os.path.exists('blast\\out\\query_blast.fasta'):
+            os.remove('blast\\out\\query_blast.fasta')
+
         arquivo_enviado = UploadFileForm(request.POST, request.FILES)
         arquivo_enviado = request.FILES['seqfileBlast']
         upload_path = 'blast/out/' + arquivo_enviado.name
@@ -28,8 +31,7 @@ def GetResponse(request):
         #RENOMEADO O ARQUIVO CARREGADO
         os.rename(r'blast/out/' + arquivo_enviado.name, r'blast/out/query_blast.fasta')
 
-    response = Blast.execute_blast("blast\\out\\query_blast.fasta", "blastn", "genomic")
-    #response = Blast.execute_blast('blast\\out\\exemplo.fasta', 'blastn', 'genomic')
+    response = Blast.execute_blast("blast\\out\\query_blast.fasta", request.POST.get('progBlast'), request.POST.get('dbBlast'))
     
     context={
       'object': response
