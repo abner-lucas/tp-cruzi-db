@@ -2,7 +2,7 @@ from Bio.Blast.Applications import *
 from Bio.Blast import NCBIXML
 
 def execute_blast(filename, blast, subject):
-	path = "C:\\Program Files\\NCBI\\blast-2.11.0+\\bin\\"
+	path = "/usr/bin/"
 	files = {
 		"cds_from_genomic": "cds_from_genomic.fna",
 		"genomic": "genomic.fna",
@@ -11,12 +11,12 @@ def execute_blast(filename, blast, subject):
 		"rna_from_genomic": "rna_from_genomic.fna"
 	}
 	comando_blastn = NcbiblastnCommandline(cmd=path+blast, \
-										   query=filename, subject="blast\\out\\GCF_000209065.1_ASM20906v1_" + files.get(subject), \
-										   outfmt=5, out="blast\\out\\result_blast.xml")
+										   query=filename, subject=r"blast/out/GCF_000209065.1_ASM20906v1_" + files.get(subject), \
+										   outfmt=5, out=r"blast/out/result_blast.xml")
 	#print(comando_blastn)
 	comando_blastn()
 	
-	arquivo_xml = open("blast\\out\\result_blast.xml", "r")
+	arquivo_xml = open(r"blast/out/result_blast.xml", "r")
 	dados = NCBIXML.parse(arquivo_xml)
 	item = next(dados)
 
