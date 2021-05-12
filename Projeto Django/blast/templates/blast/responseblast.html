@@ -8,6 +8,7 @@
     <div class="row col-8">
         <div class="border border-dark rounded-3 col-md-12 py-3 px-3">
             <h3 class="mb-3 card-title">Resultado blast</h3>
+            {%for i in object%} 
             <div>
                 <p align="justify">
                     <b>Número: </b> {{i.num}}<br>
@@ -40,7 +41,7 @@
                 </div>
                 <hr class="my-4">
             </div>
-
+            {% endfor %}
         </div>
     </div>
 </div>
