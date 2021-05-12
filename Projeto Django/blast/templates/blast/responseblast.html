@@ -4,58 +4,45 @@
 
 {%block 'conteudo'%}
 
-<div class="container">
-  <div class="row">
-    <div class="d-flex justify-content-center">
-      <div>
-      <h4 style="color: #5CADCB;">Blast Resultado</h4>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="container">
-  <div class="row">
-    <div class="d-flex justify-content-center">
-      <div class="border border-dark rounded-3 col-md-12 py-3 px-3">
-        {%for i in object%} 
-        <div> 
-          <p align="justify">
-            <b>Número: </b> {{i.num}}<br>
-            <b>Identificador da sequência: </b>{{i.sequencia}}</p>
-          </p>
-          <hr>
-          <div class="container">
-            <div class="row" align="center">
-              <div class="col">
-                <b>Tamanho:</b><br>{{i.tamanho}} 
-              </div>
-              <div class="col">
-                <b>Raw Score:</b><br>{{i.score}}<br>bit ({{i.bits}}) 
-              </div>
-              <div class="col">
-                <b>E-value:</b><br>{{i.expect}}  
-              </div>
-              <div class="col">
-                <b>Identities:</b><br>{{i.identities}}
-              </div>
-              <div class="col">
-                <b>Gaps:</b><br>{{i.gaps}}
-              </div>
-              <div class="col">
-                <b>Tamanho alinhamento:</b><br>{{i.align_length}}
-              </div>
-              <div class="col">
-                <b>Strand:</b><br>{{i.strand}}
-              </div>
+<div class="container d-flex flex-column h-100 align-items-center my-4">
+    <div class="row col-8">
+        <div class="border border-dark rounded-3 col-md-12 py-3 px-3">
+            <h3 class="mb-3 card-title">Resultado blast</h3>
+            <div>
+                <p align="justify">
+                    <b>Número: </b> {{i.num}}<br>
+                    <b>Identificador da sequência: </b>{{i.sequencia}}</p>
+                <hr>
+                <div class="container">
+                    <div class="row" align="center">
+                        <div class="col">
+                            <b>Tamanho:</b><br>{{i.tamanho}}
+                        </div>
+                        <div class="col">
+                            <b>Raw Score:</b><br>{{i.score}}<br>bit ({{i.bits}})
+                        </div>
+                        <div class="col">
+                            <b>E-value:</b><br>{{i.expect}}
+                        </div>
+                        <div class="col">
+                            <b>Gaps:</b><br>{{i.gaps}}
+                        </div>
+                        <div class="col">
+                            <b>Identities:</b><br>{{i.identities}}
+                        </div>
+                        <div class="col">
+                            <b>Tamanho alinhamento:</b><br>{{i.align_length}}
+                        </div>
+                        <div class="col">
+                            <b>Strand:</b><br>{{i.strand}}
+                        </div>
+                    </div>
+                </div>
+                <hr class="my-4">
             </div>
-          </div>
-          <hr class="my-4">
+
         </div>
-        {% endfor %}
-      </div>
     </div>
-  </div>
 </div>
 
 {%endblock%}

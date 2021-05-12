@@ -15,7 +15,8 @@ def GetResponse(request):
         arquivo_fasta = open('blast\\out\\query_blast.fasta', 'w+')
         arquivo_fasta.writelines(request.POST.get('seqtxtBlast'))
         arquivo_fasta.close()
-    
+
+
     elif request.FILES['seqfileBlast']:       #SE seqfileBlast ESTIVER SETADO
         arquivo = request.FILES['seqfileBlast']
         fn = r'blast/out/' + os.path.basename(arquivo.name)
