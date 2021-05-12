@@ -4,80 +4,59 @@
 
 {%block 'conteudo'%}
 
-<div class="container">
-  <div class="row">
-    <div class="d-flex justify-content-center">
-      <div>
-        <h4 style="color: #5CADCB;">Pesquisa Blast</h4>
-      </div>
-    </div>
-  </div>
-</div>
 
-<div class="container">
-  <div class="row">
-    <div class="d-flex justify-content-center">
-      <div class="border border-dark rounded-3 col-md-8 py-3 px-3">
-        <div>
-          <form method="post" action="{% url 'getresponse'%}" enctype="multipart/form-data">
-            {% csrf_token %}
-            <div class="mb-3">
-              <label for="progBlast">Selecione o programa do Blast:</label>
-              <select class="form-select" name="progBlast">
-                <option selected value="blastn">blastn </option>
-                <option value="tblastn">tblastn </option>
-                <option value="tblastx">tblastx </option>
-                <option value="blastp">blastp </option>
-                <option value="blastx">blastx </option>
-              </select>
-            </div>
-            <div class="mb-3">
-              <label for="dbBlast">Selecione o banco de dados para o Blast: </label>
-              <select class="form-select" name="dbBlast">
-                <option value="cds_from_genomic">CDS from Genomic</option>
-                <option value="genomic">Genomic</option>
-                <option value="protein">Protein </option>
-                <option value="rna">RNA</option>
-                <option value="rna_from_genomic">RNA from Genomic</option>
-              </select>
-            </div>
+<div class="container d-flex flex-column h-100 align-items-center my-4">
 
-            <div class="mb-3">
-              <label for="seqtxtBlast" class="form-label">Informe suas sequências em formato FASTA: </label>
-              <textarea class="form-control" name="seqtxtBlast" rows="3"></textarea>
-            </div>
+    <div class="row col-8">
+        <div class="d-flex col-12 ">
+            <div class="border border-dark rounded-3 col-12 py-3 px-3">
+                <div>
+                    <form method="post" action="{% url 'getresponse'%}" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <h3 class="mb-3 card-title">Pesquisa Blast</h3>
+                        <div class="mb-3">
+                            <label for="progBlast">Selecione o programa do Blast: </label>
+                            <select class="form-select" name="progBlast" id="progBlast">
+                                <option selected value="blastn">blastn</option>
+                                <option value="tblastn">tblastn</option>
+                                <option value="tblastx">tblastx</option>
+                                <option value="blastp">blastp</option>
+                                <option value="blastx">blastx</option>
+                            </select>
+                        </div>
 
-            <div class="mb-3">
-              <label for="seqfileBlast" class="form-label">Upload do arquivo com as sequências em formato FASTA:
-              </label>
-              <input class="form-control" type="file" name="seqfileBlast" id="seqfileBlast">
-            </div>
-            <!-- <div>
-              <label class="form-label">Outras opções: </label>
-              <div class="input-group mb-3">
-                <span class="input-group-text">Esperado</span>
-                <input type="text" class="form-control" placeholder="1e-2" aria-label="esperadoBlast">
-                <span class="input-group-text">Descrição</span>
-                <input type="text" class="form-control" placeholder="5" aria-label="descricaoBlast">
-                <span class="input-group-text">Alinhamento</span>
-                <input type="text" class="form-control" placeholder="5" aria-label="alinhamentoBlast">
-              </div>
+                        <div class="mb-3">
+                            <label for="dbBlast">Selecione o banco de dados para o Blast: </label>
+                            <select class="form-select" name="dbBlast" id="dbBlast">
+                                <option value="cds_from_genomic">CDS from Genomic</option>
+                                <option value="genomic">Genomic</option>
+                                <option value="protein">Protein</option>
+                                <option value="rna">RNA</option>
+                                <option value="rna_from_genomic">RNA from Genomic</option>
+                            </select>
+                        </div>
 
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="filtroBlast">
-                <label class="form-check-label" for="filtroBlast">
-                  Filtrar
-                </label>
-              </div>
-            </div> -->
-            <div class="d-flex justify-content-center mt-3 mb-3">
-              <button type="submit" class="btn btn-success">BLAST</button>
+                        <div class="mb-3">
+                            <label for="seqtxtBlast" class="form-label">Informe suas sequências em formato
+                                FASTA: </label>
+                            <textarea class="w-100" name="seqtxtBlast" rows="3" id="seqtxtBlast"></textarea>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="seqfileBlast" class="form-label">Upload do arquivo com as sequências em formato
+                                FASTA: </label><br/>
+                            <input type="file" name="seqfileBlast" id="seqfileBlast">
+                        </div>
+
+                        <div class="d-flex justify-content-center mt-3 mb-2">
+                            <button type="submit" class="btn btn-outline-primary col-12">BLAST</button>
+                        </div>
+                    </form>
+
+                </div>
             </div>
-          </form>
         </div>
-      </div>
     </div>
-  </div>
 </div>
 
 {%endblock%}

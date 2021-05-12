@@ -3,39 +3,38 @@
 {%block 'titulo'%}Download{%endblock%}
 
 {%block 'conteudo'%}
-<style>
-  h4 {
-    color: #3587a6;
-  }
-</style>
-<h4 class="text-center ">Baixar a sequência do organismo Trypanosoma cruzi</h4>
-<div class="container">
-  <div class="row">
-    <div class="d-flex justify-content-center">
-      <div class="border border-dark rounded-3 py-3 px-3 col-md-8">
-        <h7>Selecione o arquivo que deseja baixar:</h7>
-        <form action="{% url 'page_objects'%}" method="POST">
-          {% csrf_token %}
-          <select class="form-select" aria-label="Default select example" name="selectType">
-            <option value="0" disabled selected hidden>Escolha um arquivo</option>
-            <optgroup label="RNA"></optgroup>
-            <option value="1">Rna.fna (FASTA)</option>
-            <option value="2">Rna.gbff (GenBank)</option>
-            <optgroup label="PROTEINA"></optgroup>
-            <option value="3">Protein.faa (FASTA)</option>
-            <option value="4">Protein.gpff (GenPept)</option>
-            <optgroup label="GENOMA"></optgroup>
-            <option value="5">Genomic.fna (FASTA)</option>
-            <option value="6">Genomic.gbff (GenBank)</option>
-            <option value="7">Genomic.gtf (Gene Transfer Format)</option>
-            <option value="8">Genomic.gff (Generic Feature Format Version 3)</option>
-          </select>
-          <div class="d-flex justify-content-center d-inline p-3">
-            <button class="btn btn-success" type="submit" value="Select">DOWNLOAD</button>
-          </div>
-        </form>
-      </div>
+
+<div class="container d-flex flex-column h-100 align-items-center my-4">
+
+    <div class="row col-8">
+        <div class="d-flex col-12">
+            <div class="border border-dark rounded-3 py-3 px-3 col-12">
+
+                <h3 class="mb-3 card-title">Sequência do organismo Trypanosoma Cruzi</h3>
+                <h6>Selecione a sequencia em formato FASTA que deseja baixar:</h6>
+                <form action="{% url 'page_objects'%}" method="POST">
+                    {% csrf_token %}
+                    <select class="form-select" aria-label="Default select example" name="selectType">
+                        <option value="0" disabled selected hidden>Escolha um arquivo</option>
+                        <optgroup label="RNA"></optgroup>
+                        <option value="1">Rna.fna (FASTA)</option>
+                        <option value="2">Rna.gbff (GenBank)</option>
+                        <optgroup label="PROTEINA"></optgroup>
+                        <option value="3">Protein.faa (FASTA)</option>
+                        <option value="4">Protein.gpff (GenPept)</option>
+                        <optgroup label="GENOMA"></optgroup>
+                        <option value="5">Genomic.fna (FASTA)</option>
+                        <option value="6">Genomic.gbff (GenBank)</option>
+                        <option value="7">Genomic.gtf (Gene Transfer Format)</option>
+                        <option value="8">Genomic.gff (Generic Feature Format Version 3)</option>
+                    </select>
+
+                    <button class="btn btn-outline-primary col-12 mt-3" type="submit" value="Select">DOWNLOAD</button>
+
+                </form>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
+
 {%endblock%}
