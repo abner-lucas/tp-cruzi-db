@@ -8,7 +8,6 @@ from django.contrib import messages
 def index(request):
     return render(request, 'download/index.html')
 
-
 def page_objects(request):
         answer = request.POST.get('selectType')
         if answer == "0":
