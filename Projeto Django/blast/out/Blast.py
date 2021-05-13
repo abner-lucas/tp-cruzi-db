@@ -1,9 +1,15 @@
 from Bio.Blast.Applications import *
 from Bio.Blast import NCBIXML
+import json
+import os
+#
+with open("blast/config.json") as json_data_file:
+    data = json.load(json_data_file)
+
+conf = data
 
 def execute_blast(filename, blast, subject):
-	#path = "/usr/bin/"
-	path = 'C:/Program Files/NCBI/blast-2.11.0+/bin/'
+	path = conf['path']
 	files = {
 		"cds_from_genomic": "cds_from_genomic.fna",
 		"genomic": "genomic.fna",
@@ -52,5 +58,3 @@ def execute_blast(filename, blast, subject):
 			i+=1
 
 	return itens
-
-#print(execute_blast('Projeto Django\\blast\\out\\exemplo.fasta', 'blastn', 'genomic'))
