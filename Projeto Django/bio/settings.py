@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-*x64-lf9*^o#&vyw&91drn!p1$e!rvw_oz06z4xls%qjrwq1h)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['3.142.255.93']
+ALLOWED_HOSTS = ['3.142.255.93','127.0.0.1']
 
 
 # Application definition
@@ -44,7 +44,6 @@ INSTALLED_APPS = [
     'download.apps.DownloadConfig',
     'filogenia.apps.FilogeniaConfig',
     'sobre.apps.SobreConfig',
-
 ]
 
 MIDDLEWARE = [
@@ -126,8 +125,21 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'paginas/static')
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+from django.contrib.messages import constants
+
+MESSAGE_TAGS = {
+    constants.ERROR: 'alert-danger',
+    constants.WARNING: 'alert-warning',
+    constants.DEBUG: 'alert-info',
+    constants.SUCCESS: 'alert-success',
+    constants.INFO: 'alert-info',                
+}

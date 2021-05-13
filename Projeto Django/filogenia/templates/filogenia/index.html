@@ -1,9 +1,18 @@
 {%extends 'base.html'%}
+{% load static %}
 
 {%block 'titulo'%}Filogenia{%endblock%}
 
 {%block 'conteudo'%}
 
-<h1> Página Filogenia </h1>
+<div class="center h-100 d-flex justify-content-center not-found">
+    <lottie-player
+            autoplay
+            loop
+            mode="normal"
+            src="{% static 'assets/animation/404.json' %}"
+            style="width: 320px; height: 260px">
+    </lottie-player>
+</div>
 
 {%endblock%}
