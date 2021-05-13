@@ -2,7 +2,6 @@
     color: #fff;
     font-size: 11px;
     padding: 4px;
-
 }
 
 .team div:nth-child(3){
@@ -49,11 +48,31 @@ footer{
 
 .main-content{
     margin-top: 60px;
+    min-height: 100%;
 }
 
 
 svg{
 transform: scale(2);
+}
+
+table > thead > tr > th > div {
+    word-wrap: break-word;
+}
+
+
+.info {
+    font-size: 11px;
+}
+
+.info.description {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+hr {
+    height: 3px !important;
 }
 
 
