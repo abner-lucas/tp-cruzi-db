@@ -3,10 +3,11 @@ Plataforma web com apresentação de dados genéticos sobre o genoma Trypanosoma
 
 Disponível para acesso em: [TpCruzi Web](http://3.142.255.93/)
 
-Pasta do Projeto: **Projeto Django**
+Pasta do Projeto: **WebProject**
 
 ## Dependências
 
+- Sistema Operacional Linux
 - Python 3 (pip3)
 - Blast 2+
 
