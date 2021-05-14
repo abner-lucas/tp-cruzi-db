@@ -1,7 +1,7 @@
 # TpCruzi DB
 Plataforma web com apresentação de dados genéticos sobre o genoma Trypanosoma Cruzi (protozoário causador da doença de Chagas em humanos) e funcionalidades como BLAST.
 
-Disponível para acesso em: [TpCruzi Web](http://3.142.255.93/)
+Disponível para acesso em: [TpCruzi Web](http://tpcruzidb.sytes.net/)
 
 Pasta do Projeto: **WebProject**
 
