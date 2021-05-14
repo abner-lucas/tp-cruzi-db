@@ -1,0 +1,78 @@
+.team a {
+    color: #fff;
+    font-size: 11px;
+    padding: 4px;
+}
+
+.team div:nth-child(3){
+    margin-right: 16px;
+}
+
+
+.team h6 {
+    font-size: 9px;
+    font-weight: bolder;
+    padding-bottom: 0px;
+    margin-bottom: -2px;
+    min-height: 20px;
+}
+
+.card-img-top{
+    margin-right: 4px;
+}
+
+.card-title{
+    font-weight: bolder;
+}
+
+footer{
+    margin-top: 80px;
+}
+
+.github-logo{
+    width: 35px;
+    filter: contrast(0.0) brightness(2.5);
+}
+
+.navbar-header{
+    position: fixed;
+    z-index: 200;
+}
+
+.not-found{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-content{
+    margin-top: 60px;
+    min-height: 100%;
+}
+
+
+svg{
+transform: scale(2);
+}
+
+table > thead > tr > th > div {
+    word-wrap: break-word;
+}
+
+
+.info {
+    font-size: 11px;
+}
+
+.info.description {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+hr {
+    height: 3px !important;
+}
+
+

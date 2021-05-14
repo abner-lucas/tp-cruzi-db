@@ -1,0 +1,58 @@
+{%extends 'base.html'%}
+
+{%block 'titulo'%}Resposta Blast{%endblock%}
+
+{%block 'conteudo'%}
+
+<div class="container d-flex flex-column h-100 align-items-center my-4">
+
+    <div class="border rounded-3 col-md-12 py-3 px-3 bg-dark">
+            <h3 class="mb-3 card-title">Resultado blast</h3>
+        {%for i in object%}
+            <div>
+                <hr class="mb-4 mt-3">
+                <div align="justify">
+                    <strong># {{i.num}}</strong> <br>
+                    <p class="text-break">
+                        <strong>Sequence ID: </strong> <br/><span class="info">{{i.sequencia}}</span></p>
+                </div>
+                <div class="container mr-0 pr-0">
+                    <div class="row w-100 align-items-start px-0">
+                        <div class="col text-break info description pl-0">
+                            <strong>Size</strong><br>{{i.tamanho}}
+                        </div>
+                        <div class="col text-break info description">
+                            <strong>Score</strong><br/>{{i.score}}<br/>bit({{i.bits}})
+                        </div>
+                        <div class="col text-break info description">
+                            <strong>E-value</strong><br/>{{i.expect}}
+                        </div>
+                        <div class="col text-break info description">
+                            <strong>Gaps</strong><br>{{i.gaps}}
+                        </div>
+                        <div class="col text-break info description">
+                            <strong>Identities</strong><br>{{i.identities}}
+                        </div>
+                        <div class="col text-break info description">
+                            <strong>Align length</strong><br>{{i.align_length}}
+                        </div>
+                        <div class="col text-break info description">
+                            <strong>Strand</strong><br>{{i.strand}}
+                        </div>
+                    </div>
+                </div>
+                <div align="justify">
+                    <strong># {{i.num}}</strong> <br>
+                    <p class="text-break">
+                        <span class="info">{{i.query}}</span></p>
+                        <p class="text-break"> <span class="info">{{i.match}}</span></p>
+                        <p class="text-break"> <span class="info">{{i.query}}</span></p>
+                </div>
+
+            </div>
+        {%endfor%}
+
+    </div>
+</div>
+
+{%endblock%}

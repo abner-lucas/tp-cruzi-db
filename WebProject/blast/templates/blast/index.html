@@ -1,0 +1,62 @@
+{%extends 'base.html'%}
+
+{%block 'titulo'%}Blast{%endblock%}
+
+{%block 'conteudo'%}
+
+
+<div class="container d-flex flex-column h-100 align-items-center my-4">
+
+    <div class="row col-8">
+        <div class="d-flex col-12 ">
+            <div class="border border-dark rounded-3 col-12 py-3 px-3">
+                <div>
+                    <form method="post" action="{% url 'getresponse'%}" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <h3 class="mb-3 card-title">Pesquisa Blast</h3>
+                        <div class="mb-3">
+                            <label for="progBlast">Selecione o programa do Blast: </label>
+                            <select class="form-select" name="progBlast" id="progBlast">
+                                <option selected value="blastn">blastn</option>
+                                <option value="tblastn">tblastn</option>
+                                <option value="tblastx">tblastx</option>
+                                <option value="blastp">blastp</option>
+                                <option value="blastx">blastx</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="dbBlast">Selecione o banco de dados para o Blast: </label>
+                            <select class="form-select" name="dbBlast" id="dbBlast">
+                                <option value="cds_from_genomic">CDS from Genomic</option>
+                                <option value="genomic">Genomic</option>
+                                <option value="protein">Protein</option>
+                                <option value="rna">RNA</option>
+                                <option value="rna_from_genomic">RNA from Genomic</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="seqtxtBlast" class="form-label">Informe suas sequências em formato
+                                FASTA: </label>
+                            <textarea class="w-100" name="seqtxtBlast" rows="3" id="seqtxtBlast"></textarea>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="seqfileBlast" class="form-label">Upload do arquivo com as sequências em formato
+                                FASTA: </label><br/>
+                            <input type="file" name="seqfileBlast" id="seqfileBlast">
+                        </div>
+
+                        <div class="d-flex justify-content-center mt-3 mb-2">
+                            <button type="submit" class="btn btn-outline-primary col-12">BLAST</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{%endblock%}
