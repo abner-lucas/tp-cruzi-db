@@ -6,34 +6,114 @@ from django.http import HttpResponseRedirect
 import os
 from . import views
 
+
 def index(request):
     return render(request, 'blast/index.html')
 
-def GetResponse(request): 
-    
-    if request.POST.get('seqtxtBlast', False):       # SE seqtxtBlast ESTIVER SETADO
+
+def GetResponse(request):
+    if request.POST.get('seqtxtBlast', False):  # SE seqtxtBlast ESTIVER SETADO
         arquivo_fasta = open(r"blast/out/query_blast.fasta", 'w+')
         arquivo_fasta.writelines(request.POST.get('seqtxtBlast'))
         arquivo_fasta.close()
-    
-    elif request.FILES['seqfileBlast']:       #SE seqfileBlast ESTIVER SETADO
+
+    elif request.FILES['seqfileBlast']:  # SE seqfileBlast ESTIVER SETADO
         arquivo = request.FILES['seqfileBlast']
         fn = r"blast/out/" + os.path.basename(arquivo.name)
         open(fn, 'wb').write(arquivo.file.read())
-        
+
         if os.path.exists(r"blast/out/query_blast.fasta"):
             os.remove(r"blast/out/query_blast.fasta")
 
         arquivo_enviado = UploadFileForm(request.POST, request.FILES)
         arquivo_enviado = request.FILES['seqfileBlast']
         upload_path = r"blast/out/" + arquivo_enviado.name
-    
-        #RENOMEADO O ARQUIVO CARREGADO
+
+        # RENOMEADO O ARQUIVO CARREGADO
         os.rename(r"blast/out/" + arquivo_enviado.name, r"blast/out/query_blast.fasta")
 
-    response = Blast.execute_blast(r"blast/out/query_blast.fasta", request.POST.get('progBlast'), request.POST.get('dbBlast'))
-    
-    context={
-      'object': response
+    # response = Blast.execute_blast(r"blast/out/query_blast.fasta", request.POST.get('progBlast'), request.POST.get('dbBlast'))
+
+    response = [
+
+        {
+            'num': 4,
+            'sequencia': 'suhdkajhs dkajshdkjahsdkjhaskdhjaskj dkasjh dkasjh',
+            'tamanho': '324234',
+            'score': '234234',
+            'bits': '234234',
+            'expect': '234234',
+            'gaps': '2342342',
+            'identities': '234234',
+            'align_length': '234234',
+            'strand': '2134123412213123',
+            'query': '2134123412213123',
+            'match': '2134123412213123',
+            'query': '2134123412213123',
+            'qseq': 'TGCAAACACAACAACGGAGGAACGCATCACCGTCTGGCTCACGCGGATCAGGACGCCGGCTGAATCGGCCACCTCAGCACCACCAACAAACTGCAGCGCGGCACCCTCACGAAATGTGCACCCAGTGAGCGTGATGTTGATGGGGAGATGCAGCGGC',
+            'hseq': 'TGCAAACACAACAACGGAGGACCGCATCACCGTCTGGCTCACGCGGATCAGGACGCCAGCTGACTCGGCCGCCGCAGCACCCCCAACAAACTGCAGCGCGACACCCTCACGGAATGTGCACCCAGTGAGCGTGATGTTGATGGGGAGATGCAGCGGC',
+            'midline': '||||||||||||||||||||| ||||||||||||||||||||||||||||||||||| ||||| |||||| || ||||||| |||||||||||||||||| |||||||||| |||||||||||||||||||||||||||||||||||||||||||||',
+        },
+        {
+            'num': 5,
+            'sequencia': 'suhdkajhs dkajshdkjahsdkjhaskdhjaskj dkasjh dkasjh',
+            'tamanho': '324234',
+            'score': '234234',
+            'bits': '234234',
+            'expect': '234234',
+            'gaps': '2342342',
+            'identities': '234234',
+            'align_length': '234234',
+            'strand': '2134123412213123',
+            'query': '2134123412213123',
+            'match': '2134123412213123',
+            'query': '2134123412213123',
+            'qseq': 'TGCAAACACAACAACGGAGGAACGCATCACCGTCTGGCTCACGCGGATCAGGACGCCGGCTGAATCGGCCACCTCAGCACCACCAACAAACTGCAGCGCGGCACCCTCACGAAATGTGCACCCAGTGAGCGTGATGTTGATGGGGAGATGCAGCGGC',
+            'hseq': 'TGCAAACACAACAACGGAGGACCGCATCACCGTCTGGCTCACGCGGATCAGGACGCCAGCTGACTCGGCCGCCGCAGCACCCCCAACAAACTGCAGCGCGACACCCTCACGGAATGTGCACCCAGTGAGCGTGATGTTGATGGGGAGATGCAGCGGC',
+            'midline': '||||||| ||||||||||||| ||||||||||||||||||||||||||||||||||| ||||| |||||| || ||||||| |||||||||||||||||| |||||||||| |||||||||||||||||||||||||||||||||||||||||||||',
+        },
+
+          {
+            'num': 6,
+            'sequencia': 'suhdkajhs dkajshdkjahsdkjhaskdhjaskj dkasjh dkasjh',
+            'tamanho': '324234',
+            'score': '234234',
+            'bits': '234234',
+            'expect': '234234',
+            'gaps': '2342342',
+            'identities': '234234',
+            'align_length': '234234',
+            'strand': '2134123412213123',
+            'query': '2134123412213123',
+            'match': '2134123412213123',
+            'query': '2134123412213123',
+            'qseq': 'TGCAAACACAACAACGGAGGAACGCATCACCGTCTGGCTCACGCGGATCAGGACGCCGGCTGAATCGGCCACCTCAGCACCACCAACAAACTGCAGCGCGGCACCCTCACGAAATGTGCACCCAGTGAGCGTGATGTTGATGGGGAGATGCAGCGGC',
+            'hseq': 'TGCAAACACAACAACGGAGGACCGCATCACCGTCTGGCTCACGCGGATCAGGACGCCAGCTGACTCGGCCGCCGCAGCACCCCCAACAAACTGCAGCGCGACACCCTCACGGAATGTGCACCCAGTGAGCGTGATGTTGATGGGGAGATGCAGCGGC',
+            'midline': '  ||||| ||||||||||||| ||||||||||||||||||||||||||||||||||| ||||| |||||| || ||||||| |||||||||||||||||| |||||||||| |||||||||||||||||||||||||||||||||||||||||||||',
+        },
+
+          {
+            'num': 10000,
+            'sequencia': 'suhdkajhs dkajshdkjahsdkjhaskdhjaskj dkasjh dkasjh',
+            'tamanho': '324234',
+            'score': '234234',
+            'bits': '234234',
+            'expect': '234234',
+            'gaps': '2342342',
+            'identities': '234234',
+            'align_length': '234234',
+            'strand': '2134123412213123',
+            'query': '2134123412213123',
+            'match': '2134123412213123',
+            'query': '2134123412213123',
+            'qseq': 'TGCAAACACAACAACGGAGGAACGCATCACCGTCTGGCTCACGCGGATCAGGACGCCGGCTGAATCGGCCACCTCAGCACCACCAACAAACTGCAGCGCGGCACCCTCACGAAATGTGCACCCAGTGAGCGTGATGTTGATGGGGAGATGCAGCGGC',
+            'hseq': 'TGCAAACACAACAACGGAGGACCGCATCACCGTCTGGCTCACGCGGATCAGGACGCCAGCTGACTCGGCCGCCGCAGCACCCCCAACAAACTGCAGCGCGACACCCTCACGGAATGTGCACCCAGTGAGCGTGATGTTGATGGGGAGATGCAGCGGC',
+            'midline': '||||||    ||||||||||| ||||||||||||||||||||||||||||||||||| ||||| |||||| || ||||||| |||||||||||||||||| |||||||||| |||||||||||||||||||||||||||||||||||||||||||||',
+        }
+
+    ]
+
+    context = {
+        'object': response
     }
-    return render(request,"blast/responseblast.html", context)
+    return render(request, "blast/responseblast.html", context)
