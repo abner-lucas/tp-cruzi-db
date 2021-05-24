@@ -7,7 +7,7 @@
 <div class="container d-flex flex-column h-100 align-items-center my-4">
 
     <div class="border rounded-3 col-md-12 py-3 px-3 bg-dark">
-        <h3 class="mb-3 card-title">Resultado blast</h3>
+        <h3 class="mb-3 card-title">Blast result</h3>
         {%for i in object%}
         <div>
             <hr class="mb-4 mt-3">
@@ -19,39 +19,96 @@
             <div class="container mr-0 pr-0">
                 <div class="row w-100 align-items-start px-0">
                     <div class="col text-break info description pl-0">
-                        <strong>Size</strong><br>{{i.tamanho}}
+                        <strong>Size</strong>
+                        <div class="text-center">{{i.tamanho}}</div>
                     </div>
                     <div class="col text-break info description">
-                        <strong>Score</strong><br/>{{i.score}}<br/>bit({{i.bits}})
+                        <strong>Score</strong>
+                        <div class="text-center">{{i.score}}
+                            <div class="text-center">bit ({{i.bits}})</div>
+                        </div>
                     </div>
                     <div class="col text-break info description">
-                        <strong>E-value</strong><br/>{{i.expect}}
+                        <strong>E-value</strong>
+                        <div class="text-center">{{i.expect}}</div>
                     </div>
                     <div class="col text-break info description">
-                        <strong>Gaps</strong><br>{{i.gaps}}
+                        <strong>Gaps</strong>
+                        <div class="text-center">{{i.gaps}}</div>
                     </div>
                     <div class="col text-break info description">
-                        <strong>Identities</strong><br>{{i.identities}}
+                        <strong>Identities</strong>
+                        <div class="text-center">{{i.identities}}</div>
                     </div>
                     <div class="col text-break info description">
-                        <strong>Align length</strong><br>{{i.align_length}}
+                        <strong>Align length</strong>
+                        <div class="text-center">{{i.align_length}}</div>
                     </div>
                     <div class="col text-break info description">
-                        <strong>Strand</strong><br>{{i.strand}}
+                        <strong>Strand</strong>
+                        <div class="text-center">{{i.strand}}</div>
+                    </div>
+                    <div class="col text-break info description">
+                        <strong>Positives</strong>
+                        <div class="text-center">{{i.positives}}</div>
                     </div>
                 </div>
             </div>
-            <!--                <div align="justify">-->
-            <!--                    <strong># {{i.num}}</strong> <br>-->
-            <!--                    <p class="text-break">-->
-            <!--                        <span class="info">{{i.query}}</span></p>-->
-            <!--                        <p class="text-break"> <span class="info">{{i.match}}</span></p>-->
-            <!--                        <p class="text-break"> <span class="info">{{i.query}}</span></p>-->
-            <!--                </div>-->
 
 
-
-            <div id="sequenceAlign-{{i.num}}" class="d-flex flex-wrap mt-3"></div>
+            <div class="more-details-{{i.num}} flex-column" style="display: none !important;">
+                <div class="container mr-0 pr-0 mt-4">
+                    <div class="row w-100 align-items-start px-0">
+                        <div class="col text-break info description">
+                            <strong>Subject Start</strong>
+                            <div class="text-center">{{i.subject_start}}</div>
+                        </div>
+                        <div class="col text-break info description">
+                            <strong>Subject End</strong>
+                            <div class="text-center">{{i.subject_end}}</div>
+                        </div>
+                        <div class="col text-break info description">
+                            <strong>Subject</strong>
+                            <div class="text-center">{{i.subject}}</div>
+                        </div>
+                        <div class="col text-break info description">
+                            <strong>Match</strong>
+                            <div class="text-center">{{i.match}}</div>
+                        </div>
+                        <div class="col text-break info description">
+                            <strong>Query Start</strong>
+                            <div class="text-center">{{i.query_start}}</div>
+                        </div>
+                        <div class="col text-break info description">
+                            <strong>Query End</strong>
+                            <div class="text-center">{{i.query_end}}</div>
+                        </div>
+                        <div class="col text-break info description">
+                            <strong>Query</strong>
+                            <div class="text-center">{{i.query}}</div>
+                        </div>
+                        <div class="col text-break info description">
+                            <strong>Frame</strong>
+                            <div class="text-center">{{i.frame}}</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col text-break info description mt-5 align-self-start p-1">
+                    <strong>Sequence</strong>
+                </div>
+                <div id="sequenceAlign-{{i.num}}" class="d-flex flex-wrap mt-1"></div>
+            </div>
+            <div class="container mr-0 pr-0 mt-3">
+                <button class="btn btn-primary btn-sm copy-{{i.num}} mr-2">
+                    Show More
+                </button>
+                <!--                <button class="btn btn-secondary btn-sm clipboard-{{i.num}} mr-2">-->
+                <!--                    Copy to clipboard-->
+                <!--                </button>-->
+                <button class="btn btn-link btn-sm download-{{i.num}}">
+                    Download
+                </button>
+            </div>
 
         </div>
         {%endfor%}
@@ -59,7 +116,7 @@
     </div>
     <script>
 
-       const seuqenceAligner = (sequenceId, hseq, qseq, midline) => {
+        const sequenceAligner= (sequenceId, hseq, qseq, midline) => {
 
         const sequencelength = midline.length
 
@@ -96,8 +153,52 @@
 
 
        {%for sequence in object%}
-        seuqenceAligner({{sequence.num}}, '{{sequence.hseq}}', '{{sequence.qseq}}', '{{sequence.midline}}')
+        sequenceAligner({{sequence.num}}, '{{sequence.hseq}}', '{{sequence.qseq}}', '{{sequence.midline}}')
        {%endfor%}
+
+        const copyToClipboard = (str) => {
+            const el = document.createElement('textarea');
+            el.value = str;
+            document.body.appendChild(el);
+            el.select();
+            document.execCommand('copy');
+            document.body.removeChild(el);
+        };
+
+        const download = (filename, text) => {
+            const element = document.createElement('a');
+            element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+            element.setAttribute('download', filename);
+
+            element.style.display = 'none';
+            document.body.appendChild(element);
+
+            element.click();
+
+            document.body.removeChild(element);
+        }
+
+       {%for sequence in object%}
+            let copy_{{sequence.num}} = true;
+            document.querySelector('.copy-{{sequence.num}}').addEventListener('click', () => {
+                document.querySelector('.more-details-{{sequence.num}}').style = copy_{{sequence.num}} ? "display: flex;" : "display: none !important";
+                document.querySelector('.copy-{{sequence.num}}').innerText = !copy_{{sequence.num}} ? 'Show More' : 'Show Less'
+                copy_{{sequence.num}} = !copy_{{sequence.num}};
+            })
+
+
+             document.querySelector('.download-{{sequence.num}}').addEventListener('click', () => {
+               download('blast_result-{{sequence.num}}.json', JSON.stringify({{sequence | safe }}, null, 4));
+            })
+
+
+
+
+       {%endfor%}
+
+
+
+
 
 
 

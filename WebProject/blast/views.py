@@ -4,6 +4,7 @@ from .forms import UploadFileForm
 from .models import meuarquivo
 from django.http import HttpResponseRedirect
 import os
+import json
 from . import views
 
 
@@ -32,86 +33,7 @@ def GetResponse(request):
         # RENOMEADO O ARQUIVO CARREGADO
         os.rename(r"blast/out/" + arquivo_enviado.name, r"blast/out/query_blast.fasta")
 
-    # response = Blast.execute_blast(r"blast/out/query_blast.fasta", request.POST.get('progBlast'), request.POST.get('dbBlast'))
-
-    response = [
-
-        {
-            'num': 4,
-            'sequencia': 'suhdkajhs dkajshdkjahsdkjhaskdhjaskj dkasjh dkasjh',
-            'tamanho': '324234',
-            'score': '234234',
-            'bits': '234234',
-            'expect': '234234',
-            'gaps': '2342342',
-            'identities': '234234',
-            'align_length': '234234',
-            'strand': '2134123412213123',
-            'query': '2134123412213123',
-            'match': '2134123412213123',
-            'query': '2134123412213123',
-            'qseq': 'TGCAAACACAACAACGGAGGAACGCATCACCGTCTGGCTCACGCGGATCAGGACGCCGGCTGAATCGGCCACCTCAGCACCACCAACAAACTGCAGCGCGGCACCCTCACGAAATGTGCACCCAGTGAGCGTGATGTTGATGGGGAGATGCAGCGGC',
-            'hseq': 'TGCAAACACAACAACGGAGGACCGCATCACCGTCTGGCTCACGCGGATCAGGACGCCAGCTGACTCGGCCGCCGCAGCACCCCCAACAAACTGCAGCGCGACACCCTCACGGAATGTGCACCCAGTGAGCGTGATGTTGATGGGGAGATGCAGCGGC',
-            'midline': '||||||||||||||||||||| ||||||||||||||||||||||||||||||||||| ||||| |||||| || ||||||| |||||||||||||||||| |||||||||| |||||||||||||||||||||||||||||||||||||||||||||',
-        },
-        {
-            'num': 5,
-            'sequencia': 'suhdkajhs dkajshdkjahsdkjhaskdhjaskj dkasjh dkasjh',
-            'tamanho': '324234',
-            'score': '234234',
-            'bits': '234234',
-            'expect': '234234',
-            'gaps': '2342342',
-            'identities': '234234',
-            'align_length': '234234',
-            'strand': '2134123412213123',
-            'query': '2134123412213123',
-            'match': '2134123412213123',
-            'query': '2134123412213123',
-            'qseq': 'TGCAAACACAACAACGGAGGAACGCATCACCGTCTGGCTCACGCGGATCAGGACGCCGGCTGAATCGGCCACCTCAGCACCACCAACAAACTGCAGCGCGGCACCCTCACGAAATGTGCACCCAGTGAGCGTGATGTTGATGGGGAGATGCAGCGGC',
-            'hseq': 'TGCAAACACAACAACGGAGGACCGCATCACCGTCTGGCTCACGCGGATCAGGACGCCAGCTGACTCGGCCGCCGCAGCACCCCCAACAAACTGCAGCGCGACACCCTCACGGAATGTGCACCCAGTGAGCGTGATGTTGATGGGGAGATGCAGCGGC',
-            'midline': '||||||| ||||||||||||| ||||||||||||||||||||||||||||||||||| ||||| |||||| || ||||||| |||||||||||||||||| |||||||||| |||||||||||||||||||||||||||||||||||||||||||||',
-        },
-
-          {
-            'num': 6,
-            'sequencia': 'suhdkajhs dkajshdkjahsdkjhaskdhjaskj dkasjh dkasjh',
-            'tamanho': '324234',
-            'score': '234234',
-            'bits': '234234',
-            'expect': '234234',
-            'gaps': '2342342',
-            'identities': '234234',
-            'align_length': '234234',
-            'strand': '2134123412213123',
-            'query': '2134123412213123',
-            'match': '2134123412213123',
-            'query': '2134123412213123',
-            'qseq': 'TGCAAACACAACAACGGAGGAACGCATCACCGTCTGGCTCACGCGGATCAGGACGCCGGCTGAATCGGCCACCTCAGCACCACCAACAAACTGCAGCGCGGCACCCTCACGAAATGTGCACCCAGTGAGCGTGATGTTGATGGGGAGATGCAGCGGC',
-            'hseq': 'TGCAAACACAACAACGGAGGACCGCATCACCGTCTGGCTCACGCGGATCAGGACGCCAGCTGACTCGGCCGCCGCAGCACCCCCAACAAACTGCAGCGCGACACCCTCACGGAATGTGCACCCAGTGAGCGTGATGTTGATGGGGAGATGCAGCGGC',
-            'midline': '  ||||| ||||||||||||| ||||||||||||||||||||||||||||||||||| ||||| |||||| || ||||||| |||||||||||||||||| |||||||||| |||||||||||||||||||||||||||||||||||||||||||||',
-        },
-
-          {
-            'num': 10000,
-            'sequencia': 'suhdkajhs dkajshdkjahsdkjhaskdhjaskj dkasjh dkasjh',
-            'tamanho': '324234',
-            'score': '234234',
-            'bits': '234234',
-            'expect': '234234',
-            'gaps': '2342342',
-            'identities': '234234',
-            'align_length': '234234',
-            'strand': '2134123412213123',
-            'query': '2134123412213123',
-            'match': '2134123412213123',
-            'query': '2134123412213123',
-            'qseq': 'TGCAAACACAACAACGGAGGAACGCATCACCGTCTGGCTCACGCGGATCAGGACGCCGGCTGAATCGGCCACCTCAGCACCACCAACAAACTGCAGCGCGGCACCCTCACGAAATGTGCACCCAGTGAGCGTGATGTTGATGGGGAGATGCAGCGGC',
-            'hseq': 'TGCAAACACAACAACGGAGGACCGCATCACCGTCTGGCTCACGCGGATCAGGACGCCAGCTGACTCGGCCGCCGCAGCACCCCCAACAAACTGCAGCGCGACACCCTCACGGAATGTGCACCCAGTGAGCGTGATGTTGATGGGGAGATGCAGCGGC',
-            'midline': '||||||    ||||||||||| ||||||||||||||||||||||||||||||||||| ||||| |||||| || ||||||| |||||||||||||||||| |||||||||| |||||||||||||||||||||||||||||||||||||||||||||',
-        }
-
-    ]
+    response = Blast.execute_blast(r"blast/out/query_blast.fasta", request.POST.get('progBlast'), request.POST.get('dbBlast'))
 
     context = {
         'object': response
