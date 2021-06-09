@@ -26,7 +26,7 @@
 }
 
 footer{
-    margin-top: 80px;
+    /*margin-top: 80px;*/
 }
 
 .github-logo{
@@ -48,7 +48,6 @@ footer{
 
 .main-content{
     margin-top: 60px;
-    min-height: 100%;
 }
 
 
