@@ -68,14 +68,6 @@
                             <div class="text-center">{{i.subject_end}}</div>
                         </div>
                         <div class="col text-break info description">
-                            <strong>Subject</strong>
-                            <div class="text-center">{{i.subject}}</div>
-                        </div>
-                        <div class="col text-break info description">
-                            <strong>Match</strong>
-                            <div class="text-center">{{i.match}}</div>
-                        </div>
-                        <div class="col text-break info description">
                             <strong>Query Start</strong>
                             <div class="text-center">{{i.query_start}}</div>
                         </div>
@@ -84,12 +76,17 @@
                             <div class="text-center">{{i.query_end}}</div>
                         </div>
                         <div class="col text-break info description">
-                            <strong>Query</strong>
-                            <div class="text-center">{{i.query}}</div>
-                        </div>
-                        <div class="col text-break info description">
                             <strong>Frame</strong>
                             <div class="text-center">{{i.frame}}</div>
+                        </div>
+                        <div class="col text-break info description">
+                            <div class="text-center"></div>
+                        </div>
+                        <div class="col text-break info description">
+                            <div class="text-center"></div>
+                        </div>
+                        <div class="col text-break info description">
+                            <div class="text-center"></div>
                         </div>
                     </div>
                 </div>
@@ -116,16 +113,16 @@
     </div>
     <script>
 
-        const sequenceAligner= (sequenceId, hseq, qseq, midline) => {
+        const sequenceAligner= (sequenceId, subject, query, match) => {
 
-        const sequencelength = midline.length
+        const sequencelength = match.length
 
-        const result = midline.split('').map((line, index)=>{
+        const result = match.split('').map((line, index)=>{
 
         return {
-            hseq: hseq.split('')[index],
-            qseq: qseq.split('')[index],
-            midline: line
+            subject: subject.split('')[index],
+            query: query.split('')[index],
+            match: line
         }
 
         })
@@ -135,13 +132,13 @@
         return `
           <div class="flex-column mb-3">
                     <div class="text-center sequence-item">
-                        ${sequence.qseq}
+                        ${sequence.query}
                     </div>
                     <div class="text-center sequence-item">
-                        ${sequence.midline}
+                        ${sequence.match}
                     </div>
                     <div class="text-center sequence-item">
-                        ${sequence.hseq}
+                        ${sequence.subject}
                     </div>
           </div>
         `
@@ -153,7 +150,7 @@
 
 
        {%for sequence in object%}
-        sequenceAligner({{sequence.num}}, '{{sequence.hseq}}', '{{sequence.qseq}}', '{{sequence.midline}}')
+        sequenceAligner({{sequence.num}}, '{{sequence.subject}}', '{{sequence.query}}', '{{sequence.match}}')
        {%endfor%}
 
         const copyToClipboard = (str) => {
@@ -195,6 +192,7 @@
 
 
        {%endfor%}
+
 
 
 
