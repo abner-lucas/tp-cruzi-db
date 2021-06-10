@@ -57,42 +57,20 @@ def create_tree():
     #print("ARVORE DO CONSTRUTOR")
     #print(especiesTree)
 
-    # salvar a árvore em um arquivo XML
-    Phylo.write(especiesTree, pathProject + r'\sequenceTree.xml', 'phyloxml')
+    # salvar a árvore em um arquivo Newick
+    Phylo.write(especiesTree, pathProject + r'\sequenceTree.nwx', 'newick')
 
-    # plota a árvore com o matplotlib
+    '''# plota a árvore com o matplotlib
     fig = Phylo.draw(especiesTree)
 
-    '''# criar árvore em formato ASCII
+    # criar árvore em formato ASCII
     Phylo.draw_ascii(especiesTree)
 
     # criar árvore de outra forma com dnd
     print("ARVORE DND")
     tree_dnd = Phylo.read(pathProject + r'\sequence.dnd', "newick")
     Phylo.draw_ascii(tree_dnd)'''
-    
 
-
-    arquivo_xml = open(pathProject + r'\sequenceTree.xml', "r")
-    dados = Phylo.parse(arquivo_xml)
-    item = next(dados)
-    print(arquivo_xml)
-    itens = list()
-    '''
-    for a in item.Phylogeny:
-        for phy in a.phy:
-            sequence = {}
-            sequence['name'] = phy.name
-            sequence['id'] = phy.id
-            sequence['description'] = phy.description
-            sequence['date'] = phy.date
-            sequence['confidence'] = phy.confidence
-            sequence['clade'] = phy.clade
-            sequence['clade_relation'] = phy.clade_relation
-            sequence['sequence_relation'] = phy.sequence_relation
-            sequence['property'] = phy.property
-            itens.append(sequence)
-        '''
 	#return itens
 
 print(create_tree())
