@@ -8,6 +8,11 @@ from Bio.Align.Applications import ClustalwCommandline
 import os
 import csv
 
+with open("blast/config.json") as json_data_file:
+    data = json.load(json_data_file)
+
+conf = data
+
 pathProject = os.getcwd()
 pathProject = pathProject + r'\WebProject\filogenia\backend'
 print(pathProject)
@@ -26,7 +31,7 @@ def create_tree():
     # Algoritmo de Alinhamento Múltiplo (clustal)  
     in_file = pathProject + r'\sequence.fasta'
 
-    clustalw_exe = r"C:\Program Files (x86)\ClustalW2\clustalw2.exe"
+    clustalw_exe = conf["path"]
 
     # chama o clustal e tem como entrada as espécies (fasta)
     # e na saída teremos 2 arquivos .aln e .dnd (já alinhados)
