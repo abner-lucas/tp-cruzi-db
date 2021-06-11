@@ -32,7 +32,7 @@ Alterar o PATH da sua instalação do ClustalW local no arquivo "config.json", n
 ## PROJECT_DIR/filogenia/config.json
 
 {
-  "path": "/usr/bin/clustalw"
+  "path": "/usr/bin/clustalw2"
 }
 
 ```
