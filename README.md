@@ -10,6 +10,7 @@ Pasta do Projeto: **WebProject**
 - Sistema Operacional Linux
 - Python 3 (pip3)
 - Blast 2+
+- Clustal W 2
 
 
 ## Configuração
