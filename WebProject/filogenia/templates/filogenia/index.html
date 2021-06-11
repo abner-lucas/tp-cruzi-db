@@ -24,34 +24,63 @@
       buildNewickNodes(newick)
       
       d3.phylogram.buildRadial('#radialtree', newick, {
-        width: 200,
+        width: 150,
         skipLabels: true
       })
-      
+
       d3.phylogram.build('#phylogram', newick, {
-        width: 200,
-        height: 150
+        width: 100,
+        height: 200
       });
     }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </script>
 
-<div style="padding-top:42px;padding-left:200px;padding-right:100px">
-    <table>
-        <tr>
-            <td style="width:100%">
-                <h3 class="mb-3 card-title" style="padding-left:100px">Família Schizotrypanum</h3>
-            </td>
-        </tr>
-        <tr style="height:400px">
-            <td>
-                <div id='radialtree' style="padding-top:100px"></div>
-            </td>
-            <td>
-                <div id='phylogram'></div>
-            </td>
-        </tr>
-    </table>
+
+<div class="container d-flex flex-column h-100 align-items-center my-4">
+
+    <div class="row col-12">
+        <div class="d-flex col-12">
+            <div class="border border-dark rounded-3 py-3 px-3 col-12" style="padding-bottom: 100px">
+
+                <div class="d-flex w-100" style="min-height: 502px;">
+                    <div class="d-flex flex-column flex-grow-1">
+                        <div class="d-flex flex-grow-1"> <h3 class="mb-3 card-title">Dendrograma Circualar</h3></div>
+                        <div class="d-flex flex-grow-1">
+                            <div class="d-flex justify-content-center" style="margin-top: -150px; margin-left: 120px">
+                                <div id='radialtree'></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-column flex-grow-2">
+                        <div class="d-flex flex-grow-1"> <h3 class="mb-3 d-flex flex-grow-1 card-title" style="margin-left: -165px">Filograma</h3></div>
+                        <div class="d-flex flex-grow-1">
+                            <div class="d-flex justify-content-center">
+                                <div id='phylogram'></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <!--
