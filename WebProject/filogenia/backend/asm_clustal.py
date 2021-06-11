@@ -58,7 +58,7 @@ def create_tree():
     #print(especiesTree)
 
     # salvar a árvore em um arquivo Newick
-    Phylo.write(especiesTree, pathProject + r'\sequenceTree.nwx', 'newick')
+    Phylo.write(especiesTree, r'WebProject\paginas\static\sequenceTree.nwx', 'newick')
 
     '''# plota a árvore com o matplotlib
     fig = Phylo.draw(especiesTree)

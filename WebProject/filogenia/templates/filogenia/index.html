@@ -30,28 +30,25 @@
       
       d3.phylogram.build('#phylogram', newick, {
         width: 200,
-        height: 200
+        height: 150
       });
     }
 
 </script>
 
-<div style="background-color:white; height:700px; padding-top:50px;padding-left:200px;padding-right:100px">
-    <table style="margin-top:10px">
-        <tr style="color:black">
+<div style="padding-top:42px;padding-left:200px;padding-right:100px">
+    <table>
+        <tr>
             <td style="width:100%">
-                <h3 class="mb-7 card-title">Dendrograma Circualar</h3>
-            </td>
-            <td>
-                <h3 class="mb-7 card-title">Filograma</h3>
+                <h3 class="mb-3 card-title" style="padding-left:100px">Família Schizotrypanum</h3>
             </td>
         </tr>
-        <tr style="height:500px">
+        <tr style="height:400px">
             <td>
-                <div id='radialtree'></div>
+                <div id='radialtree' style="padding-top:100px"></div>
             </td>
             <td>
-                <div id='phylogram' style="color:black"></div>
+                <div id='phylogram'></div>
             </td>
         </tr>
     </table>

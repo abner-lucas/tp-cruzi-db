@@ -159,7 +159,8 @@ if (!d3) { throw "d3 wasn't included!"};
           .attr('y2', h)
           .attr('x1', yscale)
           .attr('x2', yscale)
-          .attr("stroke", "#ddd");
+          .attr("stroke", "#0060b8")
+          .attr("stroke-width", '0.3');
 
       vis.selectAll("text.rule")
           .data(yscale.ticks(10))
@@ -169,7 +170,7 @@ if (!d3) { throw "d3 wasn't included!"};
           .attr("y", 0)
           .attr("dy", -3)
           .attr("text-anchor", "middle")
-          .attr('font-size', '8px')
+          .attr('font-size', '6px')
           .attr('fill', '#ccc')
           .text(function(d) { return Math.round(d*100) / 100; });
     }
@@ -181,7 +182,7 @@ if (!d3) { throw "d3 wasn't included!"};
         .attr("d", diagonal)
         .attr("fill", "none")
         .attr("stroke", "#aaa")
-        .attr("stroke-width", "4px");
+        .attr("stroke-width", "3px");
         
     var node = vis.selectAll("g.node")
         .data(nodes)
@@ -207,7 +208,7 @@ if (!d3) { throw "d3 wasn't included!"};
           .attr("dx", -6)
           .attr("dy", -6)
           .attr("text-anchor", 'end')
-          .attr('font-size', '8px')
+          .attr('font-size', '6px')
           .attr('fill', '#ccc')
           .text(function(d) { return d.length; });
 
@@ -217,7 +218,7 @@ if (!d3) { throw "d3 wasn't included!"};
         .attr("text-anchor", "start")
         .attr('font-family', 'Helvetica Neue, Helvetica, sans-serif')
         .attr('font-size', '10px')
-        .attr('fill', 'black')
+        .attr('fill', '#fff')
         .text(function(d) { return d.name + ' ('+d.length+')'; });
     }
     
