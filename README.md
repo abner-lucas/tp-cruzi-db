@@ -48,6 +48,8 @@ pip3 install -r requirements
 
 ## Iniciando Serviço
 
+Acessar a pasta do projeto (WebProject) e executar o comando:
+
 ```python
 sudo python3 manage.py runserver 0.0.0.0:80
 ```
@@ -55,7 +57,7 @@ sudo python3 manage.py runserver 0.0.0.0:80
 O Serviço poderá ser acessado através do endereço
 
 
-http://127.0.0.1 ou http://localhost
+http://127.0.0.1
 
 
 ![](https://github.com/victorsantosok/abelem/blob/master/Google-Google-Chrome-2021-05-14.gif)
