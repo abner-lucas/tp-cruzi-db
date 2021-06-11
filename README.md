@@ -29,7 +29,7 @@ Alterar o PATH da sua instalação do blast local no arquivo "config.json", no d
 Alterar o PATH da sua instalação do ClustalW local no arquivo "config.json", no diretório "filogenia"
 
 ```
-## PROJECT_DIR/blast/config.json
+## PROJECT_DIR/filogenia/config.json
 
 {
   "path": "/usr/bin/clustalw"
