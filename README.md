@@ -15,7 +15,7 @@ Pasta do Projeto: **WebProject**
 
 ## Configuração
 
-Alterar o PATH da sua instalação do blast local no arquivo "config.json", no diretório
+Alterar o PATH da sua instalação do blast local no arquivo "config.json", no diretório "blast"
 
 ```
 ## PROJECT_DIR/blast/config.json
@@ -26,7 +26,16 @@ Alterar o PATH da sua instalação do blast local no arquivo "config.json", no d
 
 ```
 
+Alterar o PATH da sua instalação do ClustalW local no arquivo "config.json", no diretório "filogenia"
 
+```
+## PROJECT_DIR/blast/config.json
+
+{
+  "path": "/usr/bin/clustalw"
+}
+
+```
 
 ## Instalação
 
