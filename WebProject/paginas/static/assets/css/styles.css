@@ -79,4 +79,18 @@ hr {
     height: 22px;
 }
 
+.text-space{
+    line-height: 22px;
+    letter-spacing: 1.1px;
+}
 
+
+#phylogram text {
+    fill: #fff;
+}
+
+
+#phylogram > svg {
+    padding-left: 10px;
+    border-left: 1px solid #aaaaaa10;
+}
