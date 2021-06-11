@@ -32,7 +32,7 @@ Alterar o PATH da sua instalação do blast local no arquivo "config.json", no d
 Para realizar a instalação das dependências, devemos acessar o diretório do projeto e executar o comando
 
 ```bash
-pip3 install requirements
+pip3 install -r requirements
 ```
 
 
