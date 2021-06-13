@@ -26,7 +26,7 @@
 }
 
 footer{
-    margin-top: 80px;
+    /*margin-top: 80px;*/
 }
 
 .github-logo{
@@ -48,7 +48,6 @@ footer{
 
 .main-content{
     margin-top: 60px;
-    min-height: 100%;
 }
 
 
@@ -62,7 +61,7 @@ table > thead > tr > th > div {
 
 
 .info {
-    font-size: 11px;
+    font-size: 14px;
 }
 
 .info.description {
@@ -75,4 +74,23 @@ hr {
     height: 3px !important;
 }
 
+.sequence-item{
+    width: 15px;
+    height: 22px;
+}
 
+.text-space{
+    line-height: 22px;
+    letter-spacing: 1.1px;
+}
+
+
+#phylogram text {
+    fill: #fff;
+}
+
+
+#phylogram > svg {
+    padding-left: 10px;
+    border-left: 1px solid #aaaaaa10;
+}

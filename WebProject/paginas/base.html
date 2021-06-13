@@ -8,15 +8,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="{% static 'assets/css/theme.css' %}" rel="stylesheet"/>
     <link href="{% static 'assets/css/styles.css' %}" rel="stylesheet"/>
-
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+            crossorigin="anonymous"></script>
     <title>{%block 'titulo'%}{%endblock%}</title>
+    
 </head>
 
-<body>
+<body onload="load()">
 
 <script src="https://unpkg.com/@lottiefiles/lottie-player@0.4.0/dist/lottie-player.js"></script>
 
-<div class="w-100">
+<div class="w-100 d-flex flex-column">
     <nav class="navbar w-100 navbar-expand-lg bg-dark navbar-header">
         <div class="container-fluid">
             <a class="navbar-brand" class="text-white">Trypanosoma Cruzi </a>
@@ -36,7 +40,10 @@
                         <a class="nav-link text-white" href="{% url 'index'%}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" class="text-white" href="{% url 'blast'%}">Blast</a>
+                        <a class="nav-link" href="{% url 'blast'%}">Blast</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'browser'%}">Browser</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" class="text-white" href="{% url 'filogenia'%}">Filogenia</a>
@@ -68,7 +75,7 @@
         </div>
     </nav>
 
-    <div class="d-flex flex-column justify-content-between main-content">
+    <div class="d-flex flex-column justify-content-between main-content flex-grow-1">
 
         {%block 'conteudo'%}{%endblock%}
 
@@ -110,14 +117,11 @@
                                 <a class="nav-link" class="text-white">Diego Melo</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" class="text-white">Márcio Reis</a>
+                                <a class="nav-link" class="text-white">Mayana Pontes</a>
                             </li>
                         </div>
                         <div>
                             <h6 class="nav-link"></h6>
-                            <li class="nav-item">
-                                <a class="nav-link" class="text-white">Mayana Pontes</a>
-                            </li>
                             <li class="nav-item">
                                 <a class="nav-link" class="text-white">Victor Santos</a>
                             </li>

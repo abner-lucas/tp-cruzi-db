@@ -1,0 +1,8 @@
+Trypanosoma cf. vespertilionis G1, MF144726.1 Trypanosoma cf. vespertilionis G1 isolate TCC2045 glycosomal glyceraldehyde 3-phosphate dehydrogenase (gGAPDH) gene, partial cds
+Trypanosoma cruzi, pdb|5OPT|E Chain E, 18S rRNA
+Trypanosoma dionisii, AJ009151.1 Trypanosoma dionisii 18S rRNA gene, isolate P3
+Trypanosoma erneyi, JN040956.1 Trypanosoma erneyi isolate TCC1293 cytochrome b (cytb) gene, partial cds; kinetoplast
+Trypanosoma noyesi, KU354263.1 Trypanosoma sp. AB-2016a isolate woylie 18S ribosomal RNA gene, partial sequence
+Trypanosoma teixeirae, ,KT907061.1 Trypanosoma teixeirae 18S ribosomal RNA gene, partial sequence
+Trypanosoma vespertilionis, AF116564.1 Trypanosoma vespertilionis trans-spliced leader gene, partial sequence
+Trypanosoma wauwau, KR653210.1 Trypanosoma wauwau strain CBT 68 18S ribosomal RNA gene, partial sequence

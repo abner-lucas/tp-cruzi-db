@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'home.apps.HomeConfig',
     'blast.apps.BlastConfig',
     'busca.apps.BuscaConfig',
+    'browser.apps.BrowserConfig',
     'contato.apps.ContatoConfig',
     'download.apps.DownloadConfig',
     'filogenia.apps.FilogeniaConfig',

@@ -539,3 +539,37 @@ ul {
     padding: 0;
     margin: 0;
 }
+
+
+.accordion-button.collapsed{
+background-color: blue;
+}
+
+
+.accordion-button.collapsed{
+background-color: #2d333b !important;
+font-weight: 600;
+font-size:14px;
+color: #adbabd;
+}
+
+
+.accordion-button.collapsed{
+background-color: yellow;
+}
+
+
+.accordion-button:not(.collapsed) {
+    color: #3e82f5;
+    background-color: #22272e;
+}
+
+.accordion-body{
+    background-color: #2d333b;
+}
+
+
+.accordion-button.collapsed::after {
+    filter: invert(1);
+}
+

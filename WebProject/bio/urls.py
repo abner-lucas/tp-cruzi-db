@@ -26,4 +26,5 @@ urlpatterns = [
     path('download/',include('download.urls')),
     path('filogenia/',include('filogenia.urls')),
     path('sobre/',include('sobre.urls')),
+    path('browser/',include('browser.urls')),
 ]

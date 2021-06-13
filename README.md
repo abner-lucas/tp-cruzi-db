@@ -10,11 +10,12 @@ Pasta do Projeto: **WebProject**
 - Sistema Operacional Linux
 - Python 3 (pip3)
 - Blast 2+
+- Clustal W 2
 
 
 ## Configuração
 
-Alterar o PATH da sua instalação do blast local no arquivo "config.json", no diretório
+Alterar o PATH da sua instalação do blast local no arquivo "config.json", no diretório "blast"
 
 ```
 ## PROJECT_DIR/blast/config.json
@@ -25,18 +26,29 @@ Alterar o PATH da sua instalação do blast local no arquivo "config.json", no d
 
 ```
 
+Alterar o PATH da sua instalação do ClustalW local no arquivo "config.json", no diretório "filogenia"
 
+```
+## PROJECT_DIR/filogenia/config.json
+
+{
+  "path": "/usr/bin/clustalw2"
+}
+
+```
 
 ## Instalação
 
 Para realizar a instalação das dependências, devemos acessar o diretório do projeto e executar o comando
 
 ```bash
-pip3 install requirements
+pip3 install -r requirements
 ```
 
 
 ## Iniciando Serviço
+
+Acessar a pasta do projeto (WebProject) e executar o comando:
 
 ```python
 sudo python3 manage.py runserver 0.0.0.0:80
@@ -45,7 +57,7 @@ sudo python3 manage.py runserver 0.0.0.0:80
 O Serviço poderá ser acessado através do endereço
 
 
-http://127.0.0.1 ou http://localhost
+http://127.0.0.1
 
 
 ![Meu-Vídeo3](https://user-images.githubusercontent.com/42875522/121757508-2a926400-caf4-11eb-9ef0-4019fd7c3df9.gif)
